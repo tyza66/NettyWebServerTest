@@ -40,7 +40,7 @@ public class NettyWithController {
                                     Method method = handlerMap.get(uri);
 
                                     if (method != null) {
-                                        // 通过反射调用 Handler 方法
+                                        // 通过反射调用 Handler 方法 详细:获得方法所在类的实例(调用构造)，调用方法，获取返回值
                                         Object controllerInstance = method.getDeclaringClass().getDeclaredConstructor().newInstance();
                                         String responseContent = (String) method.invoke(controllerInstance);
 

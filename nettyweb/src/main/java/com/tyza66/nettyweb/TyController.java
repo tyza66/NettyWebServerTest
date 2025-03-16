@@ -4,6 +4,10 @@ package com.tyza66.nettyweb;
 public class TyController {
     @Handler(path = "/hello")
     public String helloHandler() {
-        return "Hello, tyza66!";
+        return service() + "Hello, tyza66!";
+    }
+
+    public String service() {
+        return "service: ";
     }
 }
