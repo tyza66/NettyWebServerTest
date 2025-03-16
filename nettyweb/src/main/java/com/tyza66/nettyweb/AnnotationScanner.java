@@ -68,8 +68,8 @@ public class AnnotationScanner {
             if (clazz.isAnnotationPresent(Controller.class)) {
                 for (Method method : clazz.getDeclaredMethods()) {
                     if (method.isAnnotationPresent(Handler.class)) {
-                        Handler handler = method.getAnnotation(Handler.class);
-                        handlerMap.put(handler.path(), method);
+                        Handler handler = method.getAnnotation(Handler.class); // 获得方法上的 @Handler 注解
+                        handlerMap.put(handler.path(), method); // 将路径和方法自身存入映射
                     }
                 }
             }
